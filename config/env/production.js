@@ -5,5 +5,5 @@ var port = process.env.PORT || 5000;
 
 module.exports = {
   port: port,
-  db: 'mongodb://leungd-db:3GW8VstttJGVM@ds059165.mongolab.com:59165/todoit-app'
+  db: 'mongodb+srv://hung:Hung12345@cluster0-xynzd.mongodb.net/admin'
 };
