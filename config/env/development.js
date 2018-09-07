@@ -5,5 +5,5 @@ var port = process.env.PORT || 4000;
 
 module.exports = {
   port: port,
-  db: 'mongodb+srv://hung:Hung12345@cluster0-xynzd.mongodb.net/todoist-app'
+  db: 'mongodb://localhost:27017/todoist-app'
 };
