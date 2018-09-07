@@ -28,7 +28,8 @@
             <a href="/todos">TODOS</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/users/logout" target="_self">Hello <span ng-bind="Todos.authentication.user.username" ng-show="Todos.authentication.user"></span>, Logout?</a>
+            <a href="/users/logout" target="_self">Hello <span ng-bind="Todos.authentication.user.username" ng-show="Todos.authentication.user"></span>,
+              Logout?</a>
           </li>
         </ul>
       </div> <!-- Navbar Collapse -->
@@ -45,20 +46,34 @@
         </div>
       </div>
       <div>
-        <div>Completed:
-          <input type="checkbox" ng-model="Todos.todo.completed" name="completed" id="completed" class="form-control">
+        <div style="margin-top:10px">
+          <form>
+            Completed:<input type="checkbox" ng-model="Todos.todo.completed" name="completed" id="completed" style="margin-left:10px">
+          </form>
+        </div>
+        <div class="input-group" moment-picker="ctrl.datepicker" format="YYYY-MM-DD" style="margin-top:10px">
+          <span class="input-group-addon">
+            <img src="/resources/img/calendar.svg" style="width:14px"/>
+          </span>
+          <input class="form-control" placeholder="Select a date" ng-model="ctrl.datepicker" ng-model-options="{ updateOn: 'blur' }">
+        </div>
+        <div class="input-group" moment-picker="ctrl.timepicker" format="HH:mm:ss" style="margin-top:10px">
+          <span class="input-group-addon">
+              <img src="/resources/img/clock.svg" style="width:14px"/>
+          </span>
+          <input class="form-control" placeholder="Select a time" ng-model="ctrl.timepicker" ng-model-options="{ updateOn: 'blur' }">
         </div>
       </div>
-      <div>
+      <div style="margin-top:10px">
         <label for="comment" class="sr-only">Comment</label>
         <div>
-          <textarea ng-model="Todos.todo.comment" id="comment" cols="30" rows="10" Placeholder="Todos comments" class="form-control"></textarea>
+          <textarea ng-model="Todos.todo.comment" id="comment" cols="30" rows="10" Placeholder="Comment" class="form-control"></textarea>
         </div>
       </div>
       <div>
-        <button class="btn btn-lg btn-primary btn-block">Save Todo</button>
+        <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px">Save Todo</button>
       </div>
-      <div ng-show="Todos.error">
+      <div ng-show="Todos.error" style="margin-top:10px">
         <strong ng-bind="Todos.error"></strong>
       </div>
     </form>
