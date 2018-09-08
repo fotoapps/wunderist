@@ -10,6 +10,12 @@ var TodoSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  duedate: {
+    type: Date,
+  },
+  reminder: {
+    type: Date,
+  },
   title: {
     type: String,
     default: '',

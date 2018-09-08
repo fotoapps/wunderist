@@ -87,6 +87,14 @@ router.route('/todos/:todoId')
         todo.title = req.body.title;
         todo.comment = req.body.comment;
         todo.completed = req.body.completed;
+        var d = req.body.duedate;
+        if (d) {
+            todo.duedate = new Date(d);
+        }
+        var r = req.body.reminder;
+        if (r) {
+            todo.reminder = new Date(r);
+        }
 
         todo.save(function (err) {
             if (err) {
