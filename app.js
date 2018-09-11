@@ -60,9 +60,11 @@ app.get('/', function(req, res) {
 });
 
 var usersRouter = require('./routes/v1/users');
-var todosRouter = require('./routes/v1/todos');
+var apiUsersRouter = require('./routes/v1/api/auth');
+var todosRouter = require('./routes/v1/api/todos');
 
 app.use('/users', usersRouter);
+app.use('/api/v1/auth', apiUsersRouter);
 app.use('/api/v1/todos', todosRouter);
 
 // Catchall Route for Angular

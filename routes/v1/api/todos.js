@@ -1,6 +1,6 @@
 // Required in /app/config/express.js
 
-var Todo = require('../../models/todos.server.model.js');
+var Todo = require('../../../models/todos.server.model.js');
 var express = require('express');
 var router = express.Router();
 
