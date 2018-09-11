@@ -1,6 +1,6 @@
 // Required in /app/config/express.js
 
-var User = require('../models/user.server.model.js');
+var User = require('../../models/user.server.model.js');
 var passport = require('passport');
 var express = require('express');
 var router = express.Router();
@@ -90,7 +90,7 @@ router.route('/login')
     // Check login attempt with Passport
     .post(passport.authenticate('local', {
         successRedirect: '/todos',
-        failureRedirect: '/login',
+        failureRedirect: '/users/login',
         failureFlash: true
     }));
 
@@ -102,7 +102,7 @@ router.get('/logout', function (req, res) {
 
 // Single /:userId Routes
 // ==============================
-router.route('/users/:userId')
+router.route('/:userId')
     // Retrieve single user
     .get(function (req, res) {
         res.json(req.user);

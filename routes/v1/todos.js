@@ -1,6 +1,6 @@
 // Required in /app/config/express.js
 
-var Todo = require('../models/todos.server.model.js');
+var Todo = require('../../models/todos.server.model.js');
 var express = require('express');
 var router = express.Router();
 
@@ -39,7 +39,7 @@ var getErrorMessage = function (err) {
     }
 };
 
-router.route('/todos')
+router.route('/')
     // If user is logged in then pull todos from Mongo
     .get(requiresLogin, function (req, res) {
         // Sort Todo by descending 'created' date
@@ -74,7 +74,7 @@ router.route('/todos')
 
 // /api/todos/:todoId
 // ==============================
-router.route('/todos/:todoId')
+router.route('/:todoId')
 
     // Todo from req.todo that was attached by todoById middleware
     .get(requiresLogin, hasAuthorization, function (req, res) {
